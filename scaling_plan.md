@@ -1,73 +1,85 @@
 # Scaling Plan: From Prototype to 10M+ Users
 
-This document outlines the strategic roadmap to evolve the current **Python-based prototype** into a **production-grade distributed system** capable of handling 10 million daily active users (DAU) and sub-100ms latency.
+This document outlines the strategic roadmap to evolve the current **Python-based prototype** into a **production-grade distributed system** capable of handling 10 million daily active users (DAU).
 <img width="1592" height="981" alt="data architecture" src="https://github.com/user-attachments/assets/08dec0d2-6dfb-498e-a554-b81e940c42b5" />
 
-## 1. Introduction: The "Build vs. Buy" Shift
-The current prototype prioritizes **simplicity** by using local file ingestion, sequential Python scripts, and in-memory caching. To scale, we must shift to **event-driven architecture** and **managed services**.
+## 1. Introduction: Separation of Concerns
+To handle 10M+ users, we must separate **Real-Time Ingestion** (sub-second latency) from **Batch Orchestration** (reliability & consistency).
+*   **Real-Time Layer:** Handled by Apache Kafka.
+*   **Management Layer:** Handled by Apache Airflow.
 
 ---
 
-## 2. Ingestion Scaling (Introducing Kafka)
+## 2. Real-Time Ingestion (Kafka Consumers)
+*Goal: Decouple high-velocity user data from database write limits.*
 
-### Current Bottleneck
-*   **Prototype:** Reads local JSON files sequentially.
-*   **Limit:** Cannot handle real-time data streams or spikes in traffic (e.g., Black Friday). If the script crashes, data is lost.
+### The "Fan-Out" Architecture
+Instead of a single script, we will utilize **Kafka Consumer Groups** to process streams in parallel:
 
-### Production Solution: Apache Kafka
-We will replace direct file reading with **Apache Kafka** to decouple producers from consumers.
-*   **Why Kafka?**
-    *   **Buffering:** Kafka acts as a shock absorber during traffic spikes, ensuring databases (Mongo/Milvus) aren't overwhelmed.
-    *   **Parallelism:** We can deploy multiple consumer groups. One group writes to MongoDB (archival), while another processes Embeddings for Milvus simultaneously.
-    *   **Replayability:** If the embedding service fails, we can replay the topic from the last committed offset.
+1.  **Topic:** `user_interactions`
+2.  **Consumer Group A (Archival):** Reads raw JSON and bulk-writes to **MongoDB**.
+3.  **Consumer Group B (Vectorization):** 
+    *   Consumes message text.
+    *   Calls Embedding API (Gemini).
+    *   Writes vectors to **Milvus**.
+    *   *Advantage:* If the Embedding API is slow, it only lags this specific consumer group, not the whole system.
+4.  **Consumer Group C (Graph Builder):** 
+    *   Extracts User/Campaign IDs.
+    *   Updates relationships in **Neo4j**.
 
----
-
-## 3. Orchestration Scaling (Introducing Airflow)
-
-### Current Bottleneck
-*   **Prototype:** A single `etl.py` script runs everything (Ingest -> Embed -> Load).
-*   **Limit:** If the embedding step fails, the entire pipeline stops. There is no visibility into retries, historical runs, or dependencies.
-
-### Production Solution: Apache Airflow
-We will decompose `etl.py` into a Directed Acyclic Graph (DAG) managed by **Airflow**.
-*   **Why Airflow?**
-    *   **Dependency Management:** Airflow ensures the "Analytics Aggregation" task only runs *after* data is successfully loaded into Neo4j.
-    *   **Backfilling:** Easily re-process historical data if we change our embedding model (e.g., upgrading from Gemini `embedding-001` to `002`).
-    *   **Alerting:** Integrated Slack/PagerDuty alerts when a specific task fails.
+**Why this scales:**
+*   **Backpressure Handling:** If traffic spikes (e.g., Black Friday), Kafka buffers the messages. The databases ingest at their own maximum speed without crashing.
+*   **Fault Tolerance:** If the Neo4j consumer crashes, it restarts and resumes exactly from the last processed message offset.
 
 ---
 
-## 4. Latency Optimization (Introducing Redis)
+## 3. Orchestration & Quality Assurance (Apache Airflow)
+*Goal: Data Integrity and Analytical Aggregation (not real-time ingestion).*
 
-### Current Bottleneck
-*   **Prototype:** Calculates recommendations on-the-fly (Query Milvus -> Query Neo4j -> Rank).
-*   **Limit:** This "Read-Path" computation takes 200-500ms. With 10M users, this will crash the API.
+As per our architecture design, Airflow is strictly used for **Micro-Batches** and **Sanity Checks**.
 
-### Production Solution: Redis (Look-Aside Cache)
-We will implement a **Cache-Aside pattern** using Redis.
-*   **Strategy:**
-    1.  **Check Redis First:** `GET recs:{user_id}`. (Latency: <5ms)
-    2.  **Cache Miss:** If empty, perform the Milvus+Neo4j lookup.
-    3.  **Write Back:** Store the result in Redis with a TTL (Time To Live) of 60 seconds.
-*   **Impact:** 95% of requests will be served directly from memory, bypassing the heavy database queries entirely.
+### Pipeline 1: Analytics Sync (Micro-Batch)
+*   **Schedule:** Every 10 minutes.
+*   **Task:** Aggregate interaction counts from Redis/Mongo and load them into **Google BigQuery**.
+*   **Why:** BigQuery is optimized for analytical loads, not row-by-row streaming inserts.
 
----
+### Pipeline 2: MongoDB Sanity Check
+*   **Task:** Verify data freshness.
+*   **Logic:** `SELECT count(*) FROM mongo_logs WHERE timestamp > NOW() - 1 hour`. If count is 0, alert "Ingestion Down".
 
-## 5. Database Scaling Strategies
+### Pipeline 3: Graph Consistency Check
+*   **Task:** Ensure Referential Integrity.
+*   **Logic:** Check if any `:INTERACTED` relationship in Neo4j points to a missing `:Campaign` node. Flag data engineering team if discrepancies found.
 
-### Milvus (Vector Search)
-*   **Sharding:** Shard the collection based on `user_id` hash across multiple nodes.
-*   **Index Optimization:** Switch from `IVF_FLAT` (brute force) to `HNSW` (Hierarchical Navigable Small World) graphs for faster search at the cost of higher RAM usage.
-*   **Read Replicas:** Deploy read-only nodes to handle high QPS from the recommendation API.
-
-### Neo4j (Graph)
-*   **Causal Clustering:** Deploy Neo4j in a cluster structure. Writes go to the Core Leader, while Reads are load-balanced across Read Replicas.
-*   **Data Pruning:** Archive interactions older than 1 year to cold storage (S3/Parquet) to keep the active graph traversal fast.
+### Pipeline 4: Vector Index Health
+*   **Task:** Validate Milvus Index.
+*   **Logic:** Perform a "dummy search" against Milvus to ensure the index is loaded and responsive.
 
 ---
 
-## 6. Cost Efficiency
-*   **Tiered Storage:** Move raw logs from MongoDB (expensive SSDs) to S3/Data Lake (cheap object storage) after 30 days.
-*   **Spot Instances:** Run the Batch ETL pipeline (Airflow workers) on AWS Spot Instances to reduce compute costs by up to 70%.
+## 4. Latency Optimization (Redis)
+*Goal: Sub-100ms API Response Time.*
 
+*   **Pattern:** Cache-Aside.
+*   **Flow:**
+    1.  API checks `Redis` for `recs:{user_id}`.
+    2.  **Hit (5ms):** Return cached JSON.
+    3.  **Miss:** Query Milvus + Neo4j $\rightarrow$ Compute Rank $\rightarrow$ Save to Redis (TTL 60s) $\rightarrow$ Return.
+*   **Scale:** Redis Cluster mode enables horizontal scaling of memory to store millions of active user sessions.
+
+---
+
+## 5. Database Scaling
+
+### Milvus (Vector DB)
+*   **Sharding:** Partition collections by `user_id` hash.
+*   **Query Nodes:** Separate "Query Nodes" (Read) from "Data Nodes" (Write) to ensure heavy ingestion doesn't slow down user searches.
+
+### Neo4j (Graph DB)
+*   **Read Replicas:** Use Causal Clustering. The API reads from Read Replicas, while Kafka writes to the Core Leader.
+
+### Cost Control
+*   **Hot/Cold Storage:**
+    *   **Hot (Redis/Milvus):** Last 7 days of data.
+    *   **Warm (Mongo/Neo4j):** Last 90 days.
+    *   **Cold (S3/Data Lake):** Older than 90 days (managed via Airflow archiving jobs).
