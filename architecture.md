@@ -1,5 +1,7 @@
 # System Architecture
 
+<img width="1592" height="981" alt="data architecture" src="https://github.com/user-attachments/assets/ca3b43a3-22b0-4681-82af-f399aee66cc3" />
+
 ## Design Philosophy
 The architecture follows the **Command Query Responsibility Segregation (CQRS)** pattern implicitly:
 *   **Write Path:** Optimized for high throughput ingestion (MongoDB).
@@ -26,4 +28,5 @@ Instead of forcing all data into one database, we use the best tool for each job
 | **Orchestration** | Python Script (Sequential) | Airflow DAGs (Parallel + Retries) |
 | **Streaming** | Direct File Read | Apache Kafka |
 | **Caching** | In-Memory | Redis Cluster |
+
 | **Security** | Local `.env` file | Hashicorp Vault / AWS Secrets Manager |
