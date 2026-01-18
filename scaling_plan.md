@@ -1,8 +1,7 @@
-<img width="1592" height="981" alt="data architecture" src="https://github.com/user-attachments/assets/08dec0d2-6dfb-498e-a554-b81e940c42b5" />
-
 # Scaling Plan: From Prototype to 10M+ Users
 
 This document outlines the strategic roadmap to evolve the current **Python-based prototype** into a **production-grade distributed system** capable of handling 10 million daily active users (DAU) and sub-100ms latency.
+<img width="1592" height="981" alt="data architecture" src="https://github.com/user-attachments/assets/08dec0d2-6dfb-498e-a554-b81e940c42b5" />
 
 ## 1. Introduction: The "Build vs. Buy" Shift
 The current prototype prioritizes **simplicity** by using local file ingestion, sequential Python scripts, and in-memory caching. To scale, we must shift to **event-driven architecture** and **managed services**.
@@ -71,3 +70,4 @@ We will implement a **Cache-Aside pattern** using Redis.
 ## 6. Cost Efficiency
 *   **Tiered Storage:** Move raw logs from MongoDB (expensive SSDs) to S3/Data Lake (cheap object storage) after 30 days.
 *   **Spot Instances:** Run the Batch ETL pipeline (Airflow workers) on AWS Spot Instances to reduce compute costs by up to 70%.
+
