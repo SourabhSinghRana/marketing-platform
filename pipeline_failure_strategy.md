@@ -1,6 +1,7 @@
 # Pipeline Failure & Reliability Strategy
 
 In a distributed multi-database system, data consistency is the biggest challenge. Below is our strategy for detecting and handling failures.
+<img width="1920" height="1080" alt="airflow_pipeline_design" src="https://github.com/user-attachments/assets/9a819ac6-7369-4b63-8727-0675688eb35d" />
 
 ## 🛡️ 1. Airflow Orchestration & Sanity Checks
 We propose a robust Airflow DAG structure to ensure data integrity across all systems.
@@ -28,4 +29,5 @@ We propose a robust Airflow DAG structure to ensure data integrity across all sy
 
 ## 🔍 3. Monitoring & Observability
 *   **Latency Tracking:** We log the `start_time` and `end_time` of every batch.
+
 *   **Data Lineage:** Each record in Neo4j/Milvus retains the original `interaction_id` from MongoDB for full traceability.
