@@ -18,6 +18,7 @@ Instead of forcing all data into one database, we use the best tool for each job
 *   **MongoDB:** Handles the schema variability of chat logs.
 *   **Milvus:** Selected over PGVector for its dedicated indexing capabilities and ability to scale to billions of vectors.
 *   **Neo4j:** Selected over SQL JOINs because finding "Users similar to User A who liked Item B" involves multiple hops that are O(1) in Graph but O(N) in SQL.
+<img width="1825" height="960" alt="data_modeling" src="https://github.com/user-attachments/assets/638b34e6-132d-4fcb-9b71-f3d3dc169161" />
 
 ### 3. API Layer
 *   **FastAPI:** Chosen for its asynchronous capabilities, allowing it to query Milvus and Neo4j in parallel to reduce latency.
@@ -30,3 +31,4 @@ Instead of forcing all data into one database, we use the best tool for each job
 | **Caching** | In-Memory | Redis Cluster |
 
 | **Security** | Local `.env` file | Hashicorp Vault / AWS Secrets Manager |
+
