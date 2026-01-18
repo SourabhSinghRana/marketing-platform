@@ -1,6 +1,7 @@
 # Scaling Plan: 10M+ Users & Sub-100ms Latency
 
 To evolve this prototype into a hyperscale platform, we will implement the following strategies.
+<img width="1592" height="981" alt="data architecture" src="https://github.com/user-attachments/assets/08dec0d2-6dfb-498e-a554-b81e940c42b5" />
 
 ## 1. Database Scaling Strategies
 
@@ -26,4 +27,5 @@ To evolve this prototype into a hyperscale platform, we will implement the follo
 ## 3. Cost Efficiency
 *   **Tiered Storage:** Move raw logs from MongoDB (expensive SSDs) to S3/Data Lake (cheap object storage) after 30 days.
 *   **Spot Instances:** Run the Batch ETL pipeline (Airflow workers) on AWS Spot Instances to reduce compute costs by up to 70%.
+
 *   **Quantization:** Use scalar quantization (SQ8) in Milvus to reduce vector size by 4x with minimal accuracy loss.
