@@ -1,0 +1,12 @@
+pymongo
+neo4j
+pymilvus
+sqlalchemy
+fastapi
+uvicorn
+google-generativeai
+python-dotenv
+faker
+numpy
+pandas
+logging

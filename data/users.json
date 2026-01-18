@@ -1,0 +1,142 @@
+[
+  {
+    "user_id": "u_001",
+    "name": "Allison Hill",
+    "email": "donaldgarcia@example.net",
+    "age": 23,
+    "signup_date": "2026-01-14"
+  },
+  {
+    "user_id": "u_002",
+    "name": "Javier Johnson",
+    "email": "jesseguzman@example.net",
+    "age": 31,
+    "signup_date": "2026-01-05"
+  },
+  {
+    "user_id": "u_003",
+    "name": "Meredith Barnes",
+    "email": "zlawrence@example.org",
+    "age": 23,
+    "signup_date": "2026-01-04"
+  },
+  {
+    "user_id": "u_004",
+    "name": "Gina Moore",
+    "email": "curtis61@example.com",
+    "age": 43,
+    "signup_date": "2026-01-09"
+  },
+  {
+    "user_id": "u_005",
+    "name": "Renee Blair",
+    "email": "dudleynicholas@example.net",
+    "age": 52,
+    "signup_date": "2026-01-08"
+  },
+  {
+    "user_id": "u_006",
+    "name": "Lisa Hensley",
+    "email": "janetwilliams@example.org",
+    "age": 23,
+    "signup_date": "2026-01-08"
+  },
+  {
+    "user_id": "u_007",
+    "name": "Dr. Sharon James",
+    "email": "xreid@example.org",
+    "age": 58,
+    "signup_date": "2026-01-09"
+  },
+  {
+    "user_id": "u_008",
+    "name": "Michael Miles",
+    "email": "lynchgeorge@example.net",
+    "age": 18,
+    "signup_date": "2026-01-06"
+  },
+  {
+    "user_id": "u_009",
+    "name": "James Mayo",
+    "email": "gabriellecameron@example.org",
+    "age": 59,
+    "signup_date": "2026-01-06"
+  },
+  {
+    "user_id": "u_010",
+    "name": "Renee Morales",
+    "email": "clarksherri@example.net",
+    "age": 47,
+    "signup_date": "2026-01-08"
+  },
+  {
+    "user_id": "u_011",
+    "name": "Jonathan Wilkerson",
+    "email": "ithomas@example.org",
+    "age": 27,
+    "signup_date": "2026-01-14"
+  },
+  {
+    "user_id": "u_012",
+    "name": "Nicole Patterson",
+    "email": "icox@example.net",
+    "age": 39,
+    "signup_date": "2026-01-12"
+  },
+  {
+    "user_id": "u_013",
+    "name": "Anthony Rodriguez",
+    "email": "laurahenderson@example.org",
+    "age": 42,
+    "signup_date": "2026-01-10"
+  },
+  {
+    "user_id": "u_014",
+    "name": "Zachary Rice",
+    "email": "frazierdanny@example.net",
+    "age": 42,
+    "signup_date": "2026-01-07"
+  },
+  {
+    "user_id": "u_015",
+    "name": "Gina Carter",
+    "email": "shawnmckay@example.net",
+    "age": 40,
+    "signup_date": "2026-01-07"
+  },
+  {
+    "user_id": "u_016",
+    "name": "Pamela Romero",
+    "email": "harrellkenneth@example.net",
+    "age": 55,
+    "signup_date": "2026-01-13"
+  },
+  {
+    "user_id": "u_017",
+    "name": "Brittany Farmer",
+    "email": "georgetracy@example.org",
+    "age": 54,
+    "signup_date": "2026-01-09"
+  },
+  {
+    "user_id": "u_018",
+    "name": "Sandra Parker",
+    "email": "allenashley@example.org",
+    "age": 29,
+    "signup_date": "2026-01-03"
+  },
+  {
+    "user_id": "u_019",
+    "name": "Rose Spence",
+    "email": "davidalvarez@example.net",
+    "age": 54,
+    "signup_date": "2026-01-05"
+  },
+  {
+    "user_id": "u_020",
+    "name": "Shane Henderson",
+    "email": "sarahcampos@example.net",
+    "age": 41,
+    "signup_date": "2026-01-05"
+  }
+]

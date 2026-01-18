@@ -1,0 +1,386 @@
+[
+  {
+    "interaction_id": "fec21bbe-6624-4bfa-8fcc-a39ab683d2e6",
+    "user_id": "u_007",
+    "campaign_id": "c_010",
+    "timestamp": "2026-01-06T21:39:42",
+    "type": "chat",
+    "message": "Are there any courses for learning Kubernetes?"
+  },
+  {
+    "interaction_id": "7394988f-847f-49b4-a64d-1bcb702753a1",
+    "user_id": "u_020",
+    "campaign_id": "c_009",
+    "timestamp": "2025-12-25T15:34:31",
+    "type": "chat",
+    "message": "Is there a discount on VR headsets?"
+  },
+  {
+    "interaction_id": "568cc69b-1064-405c-b985-c3cf3f76be1d",
+    "user_id": "u_007",
+    "campaign_id": "c_007",
+    "timestamp": "2025-12-20T19:06:07",
+    "type": "click"
+  },
+  {
+    "interaction_id": "96a402f2-3ae8-4c93-8dcd-cd03969b6662",
+    "user_id": "u_005",
+    "campaign_id": "c_010",
+    "timestamp": "2025-12-30T11:10:01",
+    "type": "click"
+  },
+  {
+    "interaction_id": "a18ff6b6-b535-406e-922c-9a5601d74256",
+    "user_id": "u_006",
+    "campaign_id": "c_005",
+    "timestamp": "2025-12-22T15:11:17",
+    "type": "chat",
+    "message": "Are there any courses for learning Kubernetes?"
+  },
+  {
+    "interaction_id": "080aadfb-e7c9-4b26-9141-25c63a9bedd4",
+    "user_id": "u_004",
+    "campaign_id": "c_003",
+    "timestamp": "2026-01-04T19:34:20",
+    "type": "chat",
+    "message": "Show me the latest summer tech gadgets."
+  },
+  {
+    "interaction_id": "474a493b-3ced-4f2d-839f-bc501223b513",
+    "user_id": "u_002",
+    "campaign_id": "c_007",
+    "timestamp": "2026-01-12T08:08:38",
+    "type": "chat",
+    "message": "Is there a discount on VR headsets?"
+  },
+  {
+    "interaction_id": "b92da22b-21df-406f-8a0b-3c3336d8393a",
+    "user_id": "u_013",
+    "campaign_id": "c_004",
+    "timestamp": "2026-01-16T11:54:31",
+    "type": "chat",
+    "message": "Do you have any deals on cloud storage?"
+  },
+  {
+    "interaction_id": "c8dcd19f-3e35-4128-b900-f7f993829b43",
+    "user_id": "u_017",
+    "campaign_id": "c_003",
+    "timestamp": "2026-01-11T17:38:55",
+    "type": "click"
+  },
+  {
+    "interaction_id": "1825bc54-30be-445f-a835-14f2ceb81f9d",
+    "user_id": "u_010",
+    "campaign_id": "c_007",
+    "timestamp": "2025-12-24T11:31:40",
+    "type": "chat",
+    "message": "I want to buy a gift for a tech enthusiast."
+  },
+  {
+    "interaction_id": "6c6fa611-5ab3-4edf-ae59-5ed3a8b317fa",
+    "user_id": "u_009",
+    "campaign_id": "c_005",
+    "timestamp": "2026-01-08T17:33:50",
+    "type": "chat",
+    "message": "Tell me about the new crypto wallet features."
+  },
+  {
+    "interaction_id": "0dde29a6-baa4-471a-9d24-67ac778eedb3",
+    "user_id": "u_002",
+    "campaign_id": "c_001",
+    "timestamp": "2025-12-24T13:15:37",
+    "type": "chat",
+    "message": "I want to buy a gift for a tech enthusiast."
+  },
+  {
+    "interaction_id": "56dc8907-ba6c-44ab-a712-303a0f844fef",
+    "user_id": "u_006",
+    "campaign_id": "c_004",
+    "timestamp": "2025-12-25T01:54:10",
+    "type": "chat",
+    "message": "Is there a discount on VR headsets?"
+  },
+  {
+    "interaction_id": "894a05e4-30b1-47ef-b10c-0c003fa7f104",
+    "user_id": "u_013",
+    "campaign_id": "c_009",
+    "timestamp": "2026-01-10T13:16:04",
+    "type": "chat",
+    "message": "I am looking for a new laptop for coding."
+  },
+  {
+    "interaction_id": "474ebc19-2ef9-4276-ac00-6f6123e2fcb4",
+    "user_id": "u_013",
+    "campaign_id": "c_002",
+    "timestamp": "2026-01-11T05:35:45",
+    "type": "click"
+  },
+  {
+    "interaction_id": "134c6c92-ec5b-427c-9fde-4fbf3ff350bf",
+    "user_id": "u_001",
+    "campaign_id": "c_002",
+    "timestamp": "2026-01-10T06:52:48",
+    "type": "chat",
+    "message": "Show me the latest summer tech gadgets."
+  },
+  {
+    "interaction_id": "8ce21ea3-db20-456e-9c81-5fe7ceda8bbb",
+    "user_id": "u_017",
+    "campaign_id": "c_004",
+    "timestamp": "2025-12-24T12:40:01",
+    "type": "click"
+  },
+  {
+    "interaction_id": "8a63f881-ffd0-49d5-a6f2-f7b80cf35b58",
+    "user_id": "u_004",
+    "campaign_id": "c_009",
+    "timestamp": "2025-12-20T11:47:21",
+    "type": "chat",
+    "message": "I want to track my runs and sleep."
+  },
+  {
+    "interaction_id": "c0e9ab30-ed26-42e9-97e0-11b7f8102383",
+    "user_id": "u_008",
+    "campaign_id": "c_010",
+    "timestamp": "2025-12-31T05:59:50",
+    "type": "chat",
+    "message": "Show me the latest summer tech gadgets."
+  },
+  {
+    "interaction_id": "7b3a4e3e-7c52-4a17-a80a-c07a2a935d62",
+    "user_id": "u_008",
+    "campaign_id": "c_003",
+    "timestamp": "2025-12-30T03:37:44",
+    "type": "click"
+  },
+  {
+    "interaction_id": "0f02bad0-e706-4ef4-a6aa-9385dd59ba71",
+    "user_id": "u_014",
+    "campaign_id": "c_002",
+    "timestamp": "2025-12-27T18:24:41",
+    "type": "chat",
+    "message": "How do I automate my home lights?"
+  },
+  {
+    "interaction_id": "63f2ae24-fc3d-4348-808d-4127610461e3",
+    "user_id": "u_010",
+    "campaign_id": "c_001",
+    "timestamp": "2026-01-01T15:34:45",
+    "type": "click"
+  },
+  {
+    "interaction_id": "747b6dba-c8fe-4ccd-88b8-d9c6ed3049cf",
+    "user_id": "u_006",
+    "campaign_id": "c_004",
+    "timestamp": "2026-01-02T14:56:04",
+    "type": "chat",
+    "message": "Do you have any deals on cloud storage?"
+  },
+  {
+    "interaction_id": "bb026576-f512-44c3-b253-d2186c4a37ea",
+    "user_id": "u_007",
+    "campaign_id": "c_004",
+    "timestamp": "2026-01-15T18:06:44",
+    "type": "chat",
+    "message": "Show me the latest summer tech gadgets."
+  },
+  {
+    "interaction_id": "27a0c3d7-7c96-4f79-b7e9-9acaa97065e1",
+    "user_id": "u_017",
+    "campaign_id": "c_010",
+    "timestamp": "2025-12-28T23:50:32",
+    "type": "click"
+  },
+  {
+    "interaction_id": "0ef8c2d6-f7fd-4646-b7bb-3eec4bf50b52",
+    "user_id": "u_017",
+    "campaign_id": "c_004",
+    "timestamp": "2026-01-16T21:23:21",
+    "type": "click"
+  },
+  {
+    "interaction_id": "bf7b539b-0f9a-4a4b-8acd-4e10bc594585",
+    "user_id": "u_002",
+    "campaign_id": "c_007",
+    "timestamp": "2026-01-03T23:58:16",
+    "type": "chat",
+    "message": "I want to buy a gift for a tech enthusiast."
+  },
+  {
+    "interaction_id": "7a0ecfea-958c-49ba-8cd6-20c20ea2622b",
+    "user_id": "u_011",
+    "campaign_id": "c_001",
+    "timestamp": "2026-01-13T04:27:30",
+    "type": "chat",
+    "message": "I want to buy a gift for a tech enthusiast."
+  },
+  {
+    "interaction_id": "284d82e5-87f7-41fb-9a4b-d9caeb5cf467",
+    "user_id": "u_017",
+    "campaign_id": "c_007",
+    "timestamp": "2025-12-22T12:51:53",
+    "type": "chat",
+    "message": "I am looking for a new laptop for coding."
+  },
+  {
+    "interaction_id": "d9f195d0-1482-4f53-8201-0c62f5f59b22",
+    "user_id": "u_005",
+    "campaign_id": "c_006",
+    "timestamp": "2025-12-28T19:05:49",
+    "type": "chat",
+    "message": "Tell me about the new crypto wallet features."
+  },
+  {
+    "interaction_id": "acdabacc-1165-4210-9854-3881118a9d29",
+    "user_id": "u_015",
+    "campaign_id": "c_001",
+    "timestamp": "2025-12-31T04:37:39",
+    "type": "chat",
+    "message": "Is there a discount on VR headsets?"
+  },
+  {
+    "interaction_id": "e3e9de99-f10c-418b-9eb0-e38a675dd5af",
+    "user_id": "u_018",
+    "campaign_id": "c_001",
+    "timestamp": "2026-01-16T10:18:54",
+    "type": "chat",
+    "message": "Do you have any deals on cloud storage?"
+  },
+  {
+    "interaction_id": "0a2c827e-9832-4856-9434-0a033f07f814",
+    "user_id": "u_003",
+    "campaign_id": "c_003",
+    "timestamp": "2025-12-23T18:06:46",
+    "type": "click"
+  },
+  {
+    "interaction_id": "90b2b633-956b-4c0c-a849-9b926b5252e3",
+    "user_id": "u_019",
+    "campaign_id": "c_001",
+    "timestamp": "2026-01-14T03:40:52",
+    "type": "chat",
+    "message": "Is there a discount on VR headsets?"
+  },
+  {
+    "interaction_id": "344a54b8-42c1-4a62-af48-e8d550fd9d3f",
+    "user_id": "u_008",
+    "campaign_id": "c_004",
+    "timestamp": "2026-01-04T00:38:45",
+    "type": "click"
+  },
+  {
+    "interaction_id": "21813d25-6552-48a6-83ff-50113d1a85dd",
+    "user_id": "u_002",
+    "campaign_id": "c_005",
+    "timestamp": "2026-01-03T08:07:01",
+    "type": "click"
+  },
+  {
+    "interaction_id": "c07a30f2-edd4-453b-90f0-fd0a750cab75",
+    "user_id": "u_005",
+    "campaign_id": "c_006",
+    "timestamp": "2025-12-23T07:06:50",
+    "type": "click"
+  },
+  {
+    "interaction_id": "ff9ab5c2-9f04-4aed-b552-332702627f73",
+    "user_id": "u_012",
+    "campaign_id": "c_006",
+    "timestamp": "2026-01-16T02:31:49",
+    "type": "chat",
+    "message": "Do you have any deals on cloud storage?"
+  },
+  {
+    "interaction_id": "89a2688b-12c1-46e0-9998-5f15ff002d4d",
+    "user_id": "u_017",
+    "campaign_id": "c_010",
+    "timestamp": "2025-12-30T02:56:16",
+    "type": "click"
+  },
+  {
+    "interaction_id": "eeea163e-21e8-4c68-83e4-2caf8181a8cc",
+    "user_id": "u_013",
+    "campaign_id": "c_002",
+    "timestamp": "2026-01-05T17:13:12",
+    "type": "chat",
+    "message": "I want to track my runs and sleep."
+  },
+  {
+    "interaction_id": "3e896c64-e117-4ac3-919c-4ea3e1805081",
+    "user_id": "u_004",
+    "campaign_id": "c_008",
+    "timestamp": "2026-01-06T17:07:31",
+    "type": "chat",
+    "message": "Tell me about the new crypto wallet features."
+  },
+  {
+    "interaction_id": "d5704f32-702c-4d20-a862-18b848f4ef12",
+    "user_id": "u_020",
+    "campaign_id": "c_001",
+    "timestamp": "2026-01-15T03:29:24",
+    "type": "chat",
+    "message": "Tell me about the new crypto wallet features."
+  },
+  {
+    "interaction_id": "fbddcf7c-9c96-49ec-8d71-c366b41b3143",
+    "user_id": "u_004",
+    "campaign_id": "c_009",
+    "timestamp": "2026-01-14T10:51:21",
+    "type": "chat",
+    "message": "Tell me about the new crypto wallet features."
+  },
+  {
+    "interaction_id": "8dfa6a56-d12d-4c9a-aaf9-15310200b1f0",
+    "user_id": "u_001",
+    "campaign_id": "c_006",
+    "timestamp": "2026-01-03T07:23:48",
+    "type": "chat",
+    "message": "Do you have any deals on cloud storage?"
+  },
+  {
+    "interaction_id": "f05db76e-1a84-451a-a9d3-d7c7ee87905e",
+    "user_id": "u_012",
+    "campaign_id": "c_007",
+    "timestamp": "2025-12-26T07:03:20",
+    "type": "chat",
+    "message": "Is there a discount on VR headsets?"
+  },
+  {
+    "interaction_id": "1b66b5a9-e3c4-4657-9d8c-bbac43b409ef",
+    "user_id": "u_020",
+    "campaign_id": "c_005",
+    "timestamp": "2026-01-15T15:08:51",
+    "type": "chat",
+    "message": "Are there any courses for learning Kubernetes?"
+  },
+  {
+    "interaction_id": "9ad620ab-4821-4ddb-85b8-9cd927cb6f2a",
+    "user_id": "u_001",
+    "campaign_id": "c_001",
+    "timestamp": "2025-12-29T23:59:47",
+    "type": "click"
+  },
+  {
+    "interaction_id": "afffcfd2-341e-440b-97c7-00aab7b56ea7",
+    "user_id": "u_012",
+    "campaign_id": "c_002",
+    "timestamp": "2026-01-01T14:09:31",
+    "type": "click"
+  },
+  {
+    "interaction_id": "e7c421c7-4049-4b71-bd10-6c6081627cf1",
+    "user_id": "u_011",
+    "campaign_id": "c_005",
+    "timestamp": "2025-12-22T05:46:49",
+    "type": "chat",
+    "message": "Is there a discount on VR headsets?"
+  },
+  {
+    "interaction_id": "d450281c-6c6f-4633-a260-772317a0df49",
+    "user_id": "u_018",
+    "campaign_id": "c_008",
+    "timestamp": "2026-01-02T04:57:03",
+    "type": "chat",
+    "message": "I am looking for a new laptop for coding."
+  }
+]

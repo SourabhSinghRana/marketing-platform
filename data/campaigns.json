@@ -1,0 +1,72 @@
+[
+  {
+    "campaign_id": "c_001",
+    "name": "Summer Sale 2024",
+    "category": "Technology",
+    "budget": 9804,
+    "status": "Active"
+  },
+  {
+    "campaign_id": "c_002",
+    "name": "AI Personalization 2024",
+    "category": "Technology",
+    "budget": 31054,
+    "status": "Active"
+  },
+  {
+    "campaign_id": "c_003",
+    "name": "Cloud Storage Promo 2024",
+    "category": "Technology",
+    "budget": 46804,
+    "status": "Active"
+  },
+  {
+    "campaign_id": "c_004",
+    "name": "Gaming Laptop Deal 2024",
+    "category": "Technology",
+    "budget": 30766,
+    "status": "Active"
+  },
+  {
+    "campaign_id": "c_005",
+    "name": "Fitness Tracker 2024",
+    "category": "Technology",
+    "budget": 8888,
+    "status": "Active"
+  },
+  {
+    "campaign_id": "c_006",
+    "name": "Crypto Wallet 2024",
+    "category": "Technology",
+    "budget": 32912,
+    "status": "Active"
+  },
+  {
+    "campaign_id": "c_007",
+    "name": "Home Automation 2024",
+    "category": "Technology",
+    "budget": 22449,
+    "status": "Active"
+  },
+  {
+    "campaign_id": "c_008",
+    "name": "VR Headset Launch 2024",
+    "category": "Technology",
+    "budget": 43927,
+    "status": "Active"
+  },
+  {
+    "campaign_id": "c_009",
+    "name": "DevOps Course 2024",
+    "category": "Technology",
+    "budget": 10327,
+    "status": "Active"
+  },
+  {
+    "campaign_id": "c_010",
+    "name": "5G Data Plan 2024",
+    "category": "Technology",
+    "budget": 43880,
+    "status": "Active"
+  }
+]
