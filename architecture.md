@@ -1,6 +1,6 @@
 # Architecture & System Design
-
 <img width="1592" height="981" alt="data architecture" src="https://github.com/user-attachments/assets/114e5b47-acfa-4c2a-8114-d13be86f01eb" />
+
 ## 1. Overview: The "North Star" vs. The Prototype
 This project demonstrates a **Multi-Database (Polyglot Persistence)** platform for AI-driven marketing. 
 
@@ -78,4 +78,5 @@ The API endpoint `GET /recommendations/{user_id}` implements a sophisticated 3-s
     *   *Input:* List of Candidate Campaigns.
     *   *Action:* Sort by `total_interactions` from the Analytics DB.
     *   *Result:* The most relevant, high-performing campaign for that specific user context.
+
 
