@@ -1,7 +1,7 @@
 # Scaling Plan: From Prototype to 10M+ Users
 
 This document outlines the strategic roadmap to evolve the current **Python-based prototype** into a **production-grade distributed system** capable of handling 10 million daily active users (DAU).
-<img width="1592" height="981" alt="data architecture" src="https://github.com/user-attachments/assets/08dec0d2-6dfb-498e-a554-b81e940c42b5" />
+<img width="1587" height="972" alt="data_architecture" src="https://github.com/user-attachments/assets/24640110-49d2-4bfd-a99e-611575cf85d0" />
 
 ## 1. Introduction: Separation of Concerns
 To handle 10M+ users, we must separate **Real-Time Ingestion** (sub-second latency) from **Batch Orchestration** (reliability & consistency).
@@ -83,3 +83,4 @@ As per our architecture design, Airflow is strictly used for **Micro-Batches** a
     *   **Hot (Redis/Milvus):** Last 7 days of data.
     *   **Warm (Mongo/Neo4j):** Last 90 days.
     *   **Cold (S3/Data Lake):** Older than 90 days (managed via Airflow archiving jobs).
+
