@@ -9,6 +9,17 @@ This project is a **scalable, multi-database data platform** designed to power r
 *   **Resilient Pipeline:** Includes retry logic, rate-limit handling, and error logging.
 *   **Production-Ready Architecture:** Designed to scale from a local prototype to a Kafka/Airflow production environment.
 
+## 📚 Documentation & Thought Process
+Please review the following documents for deep dives into design choices and production strategies:
+
+*   **[Architecture Design](architecture.md):** Detailed breakdown of the system design, explaining the trade-offs between this **Prototype** (Python scripts) and the **Production Vision** (Kafka/Airflow) shown in the diagram.
+*   **[Scaling Plan (10M+ Users)](scaling_plan.md):** A roadmap for evolving this system to handle massive scale, introducing Kafka consumers, Redis caching, and database sharding.
+*   **[Pipeline Failure Strategy](pipeline_failure_strategy.md):** How we handle data reliability, including Airflow sanity checks, retry logic, and error monitoring.
+
+<img width="1587" height="972" alt="data_architecture" src="https://github.com/user-attachments/assets/e22f0115-5782-4092-ab48-217a6e12c732" />
+
+<img width="1825" height="960" alt="data_modeling" src="https://github.com/user-attachments/assets/cea6cd28-28dd-45e8-a3b9-4d79d01040bb" />
+
 ## 🛠️ Tech Stack
 *   **Language:** Python 3.9+
 *   **API:** FastAPI
@@ -16,9 +27,6 @@ This project is a **scalable, multi-database data platform** designed to power r
 *   **Infrastructure:** Docker Compose
 *   **AI Model:** Google Gemini `embedding-001`
 
-<img width="1587" height="972" alt="data_architecture" src="https://github.com/user-attachments/assets/e22f0115-5782-4092-ab48-217a6e12c732" />
-
-<img width="1825" height="960" alt="data_modeling" src="https://github.com/user-attachments/assets/cea6cd28-28dd-45e8-a3b9-4d79d01040bb" />
 
 ## ⚙️ Setup & Installation
 
@@ -128,4 +136,5 @@ You will receive a JSON object containing the user's last message, similar users
 ```
 
 ```
+
 
