@@ -33,31 +33,7 @@ Instead of a single script, we will utilize **Kafka Consumer Groups** to process
 
 ---
 
-## 3. Orchestration & Quality Assurance (Apache Airflow)
-*Goal: Data Integrity and Analytical Aggregation (not real-time ingestion).*
-
-As per our architecture design, Airflow is strictly used for **Micro-Batches** and **Sanity Checks**.
-
-### Pipeline 1: Analytics Sync (Micro-Batch)
-*   **Schedule:** Every 10 minutes.
-*   **Task:** Aggregate interaction counts from Redis/Mongo and load them into **Google BigQuery**.
-*   **Why:** BigQuery is optimized for analytical loads, not row-by-row streaming inserts.
-
-### Pipeline 2: MongoDB Sanity Check
-*   **Task:** Verify data freshness.
-*   **Logic:** `SELECT count(*) FROM mongo_logs WHERE timestamp > NOW() - 1 hour`. If count is 0, alert "Ingestion Down".
-
-### Pipeline 3: Graph Consistency Check
-*   **Task:** Ensure Referential Integrity.
-*   **Logic:** Check if any `:INTERACTED` relationship in Neo4j points to a missing `:Campaign` node. Flag data engineering team if discrepancies found.
-
-### Pipeline 4: Vector Index Health
-*   **Task:** Validate Milvus Index.
-*   **Logic:** Perform a "dummy search" against Milvus to ensure the index is loaded and responsive.
-
----
-
-## 4. Latency Optimization (Redis)
+## 3. Latency Optimization (Redis)
 *Goal: Sub-100ms API Response Time.*
 
 *   **Pattern:** Cache-Aside.
@@ -69,7 +45,7 @@ As per our architecture design, Airflow is strictly used for **Micro-Batches** a
 
 ---
 
-## 5. Database Scaling
+## 4. Database Scaling
 
 ### Milvus (Vector DB)
 *   **Sharding:** Partition collections by `user_id` hash.
@@ -83,4 +59,5 @@ As per our architecture design, Airflow is strictly used for **Micro-Batches** a
     *   **Hot (Redis/Milvus):** Last 7 days of data.
     *   **Warm (Mongo/Neo4j):** Last 90 days.
     *   **Cold (S3/Data Lake):** Older than 90 days (managed via Airflow archiving jobs).
+
 
