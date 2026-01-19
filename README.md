@@ -45,7 +45,7 @@ NEO4J_USER=neo4j
 NEO4J_PASSWORD=password
 MILVUS_HOST=localhost
 MILVUS_PORT=19530
-
+```
 
 ## 🏃 How to Run (Step-by-Step)
 
@@ -55,7 +55,6 @@ Follow these commands in order from the project root terminal.
 Spin up MongoDB, Neo4j, and Milvus containers.
 ```bash
 docker-compose up -d
-```
 > ⏳ **Wait 60 seconds** after this command for Milvus to fully initialize.
 
 ### Step 2: Install Dependencies
@@ -136,5 +135,6 @@ You will receive a JSON object containing the user's last message, similar users
 ```
 
 ```
+
 
 
