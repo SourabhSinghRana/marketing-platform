@@ -16,7 +16,7 @@ This project is a **scalable, multi-database data platform** designed to power r
 *   **Infrastructure:** Docker Compose
 *   **AI Model:** Google Gemini `embedding-001`
 
-  <img width="1592" height="981" alt="data architecture" src="https://github.com/user-attachments/assets/e2ed2d28-d760-4e7a-8240-111a16bc59c1" />
+<img width="1587" height="972" alt="data_architecture" src="https://github.com/user-attachments/assets/e22f0115-5782-4092-ab48-217a6e12c732" />
 
 <img width="1825" height="960" alt="data_modeling" src="https://github.com/user-attachments/assets/cea6cd28-28dd-45e8-a3b9-4d79d01040bb" />
 
@@ -128,3 +128,4 @@ You will receive a JSON object containing the user's last message, similar users
 ```
 
 ```
+
